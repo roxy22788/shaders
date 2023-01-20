@@ -7,7 +7,7 @@ shader = ExtResource( 1 )
 shader_param/screen_width = 1024.0
 shader_param/screen_height = 600.0
 shader_param/player_position = Vector2( 0.5, 0.5 )
-shader_param/progress = 0.0
+shader_param/progress = 0.727
 
 [node name="CircleInPlayer" type="ColorRect"]
 material = SubResource( 2 )
