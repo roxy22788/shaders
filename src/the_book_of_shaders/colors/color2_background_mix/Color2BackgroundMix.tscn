@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform vec2 u_resolutioon = vec2(1024.0, 600.0);
+
+const vec3 colorA = vec3(0.149,0.141,0.912); // verde
+const vec3 colorB = vec3(1.000,0.833,0.224); // roxo
+
+float plot(vec2 st, float pct) {
+	return smoothstep(0.01, 0.0, abs(st.y - pct));
+}
+
+void fragment() {
+	vec2 st = FRAGCOORD.xy / u_resolutioon;
+	float y = st.x;
+	
+	vec3 color = mix(colorA, colorB, y);
+	float blue = plot(st, y);
+	color = (1.0 - blue) * color + blue * vec3(0.0, 0.0, 1.0);
+	
+	COLOR.rgb = color;
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+shader_param/u_resolutioon = Vector2( 1024, 600 )
+
+[node name="Color2BackgroundMix" type="ColorRect"]
+material = SubResource( 2 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
