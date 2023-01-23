@@ -3,30 +3,22 @@
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
 
-uniform vec2 u_resolution = vec2(1024.0, 600.0);
+uniform vec2 u_resolution = vec2(1024.0, 600.);
 
-float plot(vec2 st, float pct){
-  return  smoothstep( pct-0.02, pct, st.y) -
-          smoothstep( pct, pct+0.02, st.y);
-}
-
-void fragment() {
+void fragment() { 
 	vec2 st = FRAGCOORD.xy / u_resolution;
-	float y = pow(st.x, 5.0);
+	float y = step(0.5, st.x);
 	
 	vec3 color = vec3(y);
 	
-	float green = plot(st, y);
-	color = (1.0 - green) * color + green * vec3(0.0, 1.0, 0.0);
-	
-	COLOR.rgb = color; 
+	COLOR.rgb = color;
 }"
 
 [sub_resource type="ShaderMaterial" id=2]
 shader = SubResource( 1 )
 shader_param/u_resolution = Vector2( 1024, 600 )
 
-[node name="Code2" type="ColorRect"]
+[node name="Code3Step" type="ColorRect"]
 material = SubResource( 2 )
 anchor_right = 1.0
 anchor_bottom = 1.0
