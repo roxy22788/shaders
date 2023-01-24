@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform vec2 u_resolution = vec2(1024.0, 600.0);
+
+void fragment() {
+	vec2 st = FRAGCOORD.xy / u_resolution;
+	vec3 color = vec3(0.0);
+	
+	float left = step(0.1, st.x);
+	float bottom = step(0.1, st.y);
+	
+	color = vec3(left * bottom);
+	
+	COLOR.rgb = color;
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+shader_param/u_resolution = Vector2( 1024, 600 )
+
+[node name="Retangulo1" type="ColorRect"]
+material = SubResource( 2 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )

@@ -1,12 +1,12 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://src/the_book_of_shaders/colors/color2_background_mix/Color2BackgroundMix.gdshader" type="Shader" id=1]
+[ext_resource path="res://src/the_book_of_shaders/colors/color2_exercicios/q1/Q1.gdshader" type="Shader" id=1]
 
 [sub_resource type="ShaderMaterial" id=2]
 shader = ExtResource( 1 )
 shader_param/u_resolution = Vector2( 1024, 600 )
 
-[node name="Color2BackgroundMix" type="ColorRect"]
+[node name="Q1" type="ColorRect"]
 material = SubResource( 2 )
 anchor_right = 1.0
 anchor_bottom = 1.0

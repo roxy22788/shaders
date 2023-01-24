@@ -1,0 +1,7 @@
+q1 = Componha um gradiente que se assemelha com entardecer de William Turner
+
+q2 = Anime uma transição entre o nascer do sol e o pôr do sol usando u_time.
+
+q3 = Você consegue criar um arco-íris usando o que foi aprendido até agora?
+
+q4 = Use a função step() para criar uma bandeira colorida.
