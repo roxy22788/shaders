@@ -4,6 +4,7 @@
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 1 )
+shader_param/u_resolution = Vector2( 1024, 600 )
 
 [node name="TelaComRetangulos" type="ColorRect"]
 material = SubResource( 1 )
