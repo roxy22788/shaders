@@ -6,7 +6,8 @@ func snap(value, step):
 	
 
 func _ready():
-	var pos = Vector2(700, 0)
-	var step = Vector2(333, 0)
-	print(pos.snapped(step))
-	print(snap(pos.x, step.x))
+	var v1 = Vector2(0.45, 0)
+	var v2 = Vector2(0.10, 0)
+	var dist = v1 - v2
+	print(dist.dot(dist))
+	print(v1.distance_to(v2))

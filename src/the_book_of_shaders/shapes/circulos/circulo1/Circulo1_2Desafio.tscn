@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/the_book_of_shaders/shapes/circulos/circulo1/Circulo1_2Desafio.gdshader" type="Shader" id=1]
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 1 )
+shader_param/u_resolution = Vector2( 1024, 600 )
+shader_param/raio = 0.171
+
+[node name="Circulo1_2Desafio" type="ColorRect"]
+material = SubResource( 2 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
